@@ -1,0 +1,10 @@
+<h3>DC's Finest</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let savior of saviors" class="col-1-4" 
+  routerLink ="/detail/{{savior.id}}">
+    <div class="module savior">
+      <h4>{{savior.name}}</h4>
+    </div>
+  </a>
+</div>
+<app-savior-search></app-savior-search>

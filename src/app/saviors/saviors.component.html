@@ -1,0 +1,21 @@
+<h2>The Finest</h2>
+
+<div>
+  <label>Character name:
+    <input #saviorName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(saviorName.value); saviorName.value=''">
+    ADD
+  </button>
+</div>
+
+<ul class="saviors">
+  <li *ngFor="let savior of saviors">
+    <a routerLink="/detail/{{savior.id}}">
+      <span class="badge">{{savior.id}}</span> {{savior.name}}
+    </a>
+    <button class="delete" title="delete savior"
+      (click)="delete(savior)">x</button>
+  </li>
+</ul>
